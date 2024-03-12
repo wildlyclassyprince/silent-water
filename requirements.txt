@@ -1,0 +1,5 @@
+dbt-core==1.7.9
+dbt-duckdb==1.7.3
+dbt-extractor==0.5.1
+dbt-semantic-interfaces==0.4.4
+duckdb==0.10.0

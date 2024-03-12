@@ -1,0 +1,33 @@
+name: test
+version: '0.0.1'
+config-version: 2
+require-dbt-version: ">=1.5.2"
+
+profile: test
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["data"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+
+# Folders to be removed by 'dbt clean' command:
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  test:
+    staging:
+      schema: staging
+      materialized: table
+    analytics:
+      schema: analytics
+      materialized: ephemeral
+    reporting:
+      schema: reporting
+      materialized: table
+
