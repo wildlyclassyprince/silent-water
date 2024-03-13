@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: income
+    tags: ["income"]
+    schema: income 
+    tables:
+      - name: income_age_and_sex
+
