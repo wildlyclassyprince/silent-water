@@ -8,3 +8,4 @@ dagster==1.6.9
 dagster-graphql==1.6.9
 dagster-pipes==1.6.9
 dagster-webserver==1.6.9
+dagster-dbt==0.22.9
