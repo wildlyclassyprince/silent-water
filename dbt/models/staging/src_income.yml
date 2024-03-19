@@ -6,4 +6,7 @@ sources:
     schema: income 
     tables:
       - name: income_age_and_sex
+        meta:
+          dagster:
+            asset_key: ["income_age_and_sex"]
 
