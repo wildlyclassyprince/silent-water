@@ -13,9 +13,9 @@ Execute the `run.sh` with the command:
 
 This script will:
 
-- [ x ] Create and activate a virtual environment
-- [ x ] Download requirements
-- [ x ] Setup dbt
-- [ x ] Run Dagster in dev mode 
+- [x] Create and activate a virtual environment
+- [x] Download requirements
+- [x] Setup dbt
+- [x] Run Dagster in dev mode 
 
 Navigate to `http://localhost:3000` to access the Dagster UI and create the data assets by clicking on __Materialize All__.
