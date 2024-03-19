@@ -1,0 +1,11 @@
+dbt-core==1.7.9
+dbt-duckdb==1.7.3
+dbt-extractor==0.5.1
+dbt-semantic-interfaces==0.4.4
+duckdb==0.10.0
+eurostat==1.1.0
+dagster==1.6.9
+dagster-graphql==1.6.9
+dagster-pipes==1.6.9
+dagster-webserver==1.6.9
+dagster-dbt==0.22.9

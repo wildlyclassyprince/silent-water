@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: income
+    tags: ["income"]
+    schema: income 
+    tables:
+      - name: income_age_and_sex
+        meta:
+          dagster:
+            asset_key: ["income_age_and_sex"]
+
