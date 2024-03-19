@@ -1,6 +1,14 @@
-with stg_income_data as (
+with source as (
+	{#-
+		Use source instead of seed:
+	#}
+	select * from {{ source('income', 'income_age_and_sex')}}
+
+),
+
+renamed as (
 	select *
-	from {{ source('income', 'income_age_and_sex') }}
+	from source
 )
 select *
-from stg_income_data
+from renamed
