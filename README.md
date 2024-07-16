@@ -1,21 +1,22 @@
 # silent-water
 
-This is a basic ELT proof of concept that reads from the Eurostats API and models data to provide insights about income across various demographics.
+***
 
-The orchestrator of choice is Dagster and uses Python to read data and metadata from the API, upload it to a local duckdb database, and perform data modeling using dbt.
+`silent-water` aims to:
 
-# Setup
+1. manage the data engineering lifecycle of open source data sets that I find interesting; and
+2. serve as proof of concept for setting up an ETL project using the open data stack.
 
-Execute the `run.sh` with the command:
+***
+
+## Setup
+
+From the commandline, run:
 ```cmd
-. run.sh
+bash run.sh
 ```
+This will setup the repo. Navigate to `http://localhost:3000` in your browser to access the Dagster UI.
 
-This script will:
+Create all assets by clicking on __Materialize All__.
 
-- [x] Create and activate a virtual environment
-- [x] Download requirements
-- [x] Setup dbt
-- [x] Run Dagster in dev mode 
-
-Navigate to `http://localhost:3000` to access the Dagster UI and create the data assets by clicking on __Materialize All__.
+***
