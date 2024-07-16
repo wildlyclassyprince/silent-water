@@ -24,10 +24,6 @@ models:
     staging:
       schema: staging
       materialized: table
-    analytics:
-      schema: analytics
-      materialized: ephemeral
-    reporting:
-      schema: reporting
-      materialized: table
-
+      +meta:
+        dagster:
+          group: staging
