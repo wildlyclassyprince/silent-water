@@ -9,12 +9,12 @@ echo "DONE"
 
 # Setup dbt project
 echo "Setting up dbt project ..."
-pushd dbt
+pushd ./project/dwh/dbt
 dbt clean && dbt deps && dbt compile --profiles-dir ./
 popd
 echo "DONE"
 
 # Run Dagster ...
 echo "Starting Dagster ..."
-pushd dwh
+pushd ./project
 dagster dev
