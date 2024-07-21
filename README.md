@@ -9,13 +9,17 @@
 
 ***
 
-## Setup
+## Run the app
 
-From the commandline, run:
+Build the image:
 ```cmd
-bash run.sh
+docker build -f Dockerfile . -t silent-water
 ```
-This will setup the repo. Navigate to `http://localhost:3000` in your browser to access the Dagster UI.
+
+Run the container:
+```cmd
+docker run --name silent-water -p 3000:3000 silent-water
+```
 
 Create all assets by clicking on __Materialize All__.
 
