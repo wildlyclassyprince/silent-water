@@ -11,16 +11,17 @@
 
 ## Run the app
 
-Build the image:
+Build the image and start the container:
 ```cmd
-docker build -f Dockerfile . -t silent-water
-```
-
-Run the container:
-```cmd
-docker run --name silent-water -p 3000:3000 silent-water
+make init
 ```
 
 Create all assets by clicking on __Materialize All__.
+
+Stop the app:
+```cmd
+make clean
+```
+
 
 ***
