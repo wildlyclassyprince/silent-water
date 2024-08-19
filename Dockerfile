@@ -2,7 +2,6 @@ FROM python:3.12-slim-bullseye
 
 WORKDIR /silent-water
 COPY ./requirements.txt .
-COPY ./project ./project
 
 # Virtual environment
 ENV VIRTUAL_ENV=/opt/venv
@@ -11,10 +10,6 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Install requirements
 RUN pip install -U pip -r requirements.txt
-
-# Setup dbt
-RUN apt-get -y update && apt-get -y install git
-RUN cd ./project/dwh/dbt && dbt clean && dbt deps && dbt compile --profiles-dir ./
 
 WORKDIR /silent-water/project
 
