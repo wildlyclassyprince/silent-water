@@ -3,7 +3,7 @@ test:
   outputs:
     dev:
       type: duckdb
-      path: './test.duckdb'
+      path: './silent-water.duckdb'
       extensions:
         - httpfs
         - parquet

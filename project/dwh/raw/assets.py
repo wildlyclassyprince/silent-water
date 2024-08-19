@@ -23,10 +23,15 @@ def income_age_and_sex(context: AssetExecutionContext) -> MaterializeResult:
             )["code"].iloc[0]
         )
     income_dictionary = eu.get_dic(income_code)
+    income_dictionary_df = pd.DataFrame(income_dictionary, columns=['Code', 'Description', 'Details',])
     income_data = eu.get_data_df(income_code)
 
     # Insert
-    with duckdb.connect("../dbt/silent-water.duckdb") as con:
+    current_dir = os.path.dirname(__file__)
+    relative_path = os.path.join(current_dir, '../dbt/silent-water.duckdb')
+    absolute_path = os.path.abspath(relative_path)
+    
+    with duckdb.connect(absolute_path) as con:
         con.sql("create schema if not exists income;")
         con.sql(
             "create table if not exists income.income_age_and_sex as select * from income_data;"
@@ -36,7 +41,7 @@ def income_age_and_sex(context: AssetExecutionContext) -> MaterializeResult:
         metadata={
             "num_records": len(income_data),
             "code": income_code,
-            "dictionary": income_dictionary,
+            "dictionary": MetadataValue.md(income_dictionary_df.to_markdown()),
             "preview": MetadataValue.md(income_data.head().to_markdown()),
         }
     )
