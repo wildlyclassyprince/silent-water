@@ -1,5 +1,8 @@
+IMAGE_NAME := "silent-water"
+CONTAINER_NAME := "silent-water"
+
 init:
-	bash init.sh
+	@./init.sh $(IMAGE_NAME) $(CONTAINER_NAME)
 
 clean:
-	bash cleanup.sh
+	@./cleanup.sh $(CONTAINER_NAME)
